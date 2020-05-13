@@ -34,7 +34,7 @@ class ContentScroll extends React.Component{
             "page":this.state.page,
             "filters":obj
         }
-        axios.post('http://localhost:4000/',obj1).then(res=>{
+        axios.post('https://shoppercarty-backend.herokuapp.com/',obj1).then(res=>{
             if(res.data.length<12){
                 this.setState({
                     nodata:true

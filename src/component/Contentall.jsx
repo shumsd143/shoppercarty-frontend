@@ -32,7 +32,7 @@ class Contentall extends React.Component{
             "page":1,
             "filters":obj
         }
-        axios.post('http://localhost:4000/',obj1).then(res=>{
+        axios.post('https://shoppercarty-backend.herokuapp.com/',obj1).then(res=>{
             this.props.changevalue(res,1,[])
             this.setState({
                 data:res.data,
