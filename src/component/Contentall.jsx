@@ -58,7 +58,7 @@ class Contentall extends React.Component{
                 <div>
                     <div style={{marginTop:'5px',marginRight:'5px',marginLeft:'5px',display:'flex',flexWrap:'wrap',justifyContent:'space-around'}}>
                         {data.map(el=>
-                            <EachContent id={el._id} wholedata={el}/>
+                            <EachContent key={el._id} wholedata={el}/>
                         )}
                     </div>
                     <ContentScroll/>

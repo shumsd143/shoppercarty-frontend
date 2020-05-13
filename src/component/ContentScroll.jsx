@@ -31,10 +31,11 @@ class ContentScroll extends React.Component{
             obj.push({"key":"created_at","value":[this.props.startdate,this.props.enddate],"operator":"between"})
         }
         let obj1={
-            "page":this.state.page,
+            "page":this.state.page+1,
             "filters":obj
         }
         axios.post('https://shoppercarty-backend.herokuapp.com/',obj1).then(res=>{
+            console.log(res)
             if(res.data.length<12){
                 this.setState({
                     nodata:true
@@ -46,7 +47,7 @@ class ContentScroll extends React.Component{
                 data:add_data,
                 hidespin:false,
                 button_value:'Click to load more',
-                page:this.state.page
+                page:this.state.page+1
             })
         })
     }
@@ -71,7 +72,7 @@ class ContentScroll extends React.Component{
                 <div>
                     <div style={{marginTop:'5px',marginRight:'5px',marginLeft:'5px',display:'flex',flexWrap:'wrap',justifyContent:'space-around'}}>
                         {data.map(el=>
-                            <EachContent id={el._id} wholedata={el}/>
+                            <EachContent key={el._id} wholedata={el}/>
                         )}
                     </div>
                     <div style={{marginLeft:'10px',marginBottom:'10px',marginRight:'10px',textAlign:"center"}}>
@@ -85,7 +86,7 @@ class ContentScroll extends React.Component{
                 <div>
                     <div style={{marginTop:'5px',marginRight:'5px',marginLeft:'5px',display:'flex',flexWrap:'wrap',justifyContent:'space-around'}}>
                         {data.map(el=>
-                            <EachContent id={el._id} wholedata={el}/>
+                            <EachContent key={el._id} wholedata={el}/>
                         )}
                     </div>
                     <div style={{textAlign:'center',marginBottom:'10px'}}>
