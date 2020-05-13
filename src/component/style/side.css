@@ -1,0 +1,31 @@
+.content-size{
+    padding: 24;
+    height: 100vh;
+}
+.filter-menu-adjust{
+    margin-top: 60px;
+}
+.menu-width{
+    margin-top: 100px;
+}
+.code-box-demo .ant-input-number {
+    margin-right: 10px;
+}
+.ant-row-rtl .code-box-demo .ant-input-number {
+    margin-right: 0;
+    margin-left: 10px;
+}
+.divide-style{
+    color: white;
+}
+.marginer{
+    text-align: center;
+}
+.marginer-button{
+    text-align: center;
+    margin-top: 20px;
+}
+.input-product{
+    margin-left: 5%;
+    width: 90%;
+}
