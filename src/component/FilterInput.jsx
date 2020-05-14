@@ -19,14 +19,19 @@ class FilterInput extends React.Component{
         }
     }
     onchangedate=(event)=>{
-        if(event[0] && event[1]){
-            let start=moment(event[0]).format('YYYY-MM-DD');
-            let end=moment(event[1]).format('YYYY-MM-DD');
+        if(!event){
             this.setState({
-                startdate:start,
-                enddate:end
+                startdate:'',
+                enddate:''
             })
+            return
         }
+        let start=moment(event[0]).format('YYYY-MM-DD');
+        let end=moment(event[1]).format('YYYY-MM-DD');
+        this.setState({
+            startdate:start,
+            enddate:end
+        })
     }
     onchangemin_percent=(e)=>{
         if(e>=100){
@@ -86,7 +91,7 @@ class FilterInput extends React.Component{
                 </div>
                 <Divider><div className="divide-style">Created between</div></Divider>
                 <div className="input-product">
-                    <RangePicker allowClear={false} onChange={this.onchangedate}/>
+                    <RangePicker onChange={this.onchangedate}/>
                 </div>
                 <div className="marginer-button">
                     <Button type="primary" size="large" shape="circle" icon={<SearchOutlined />} onClick={this.postdata}/>
